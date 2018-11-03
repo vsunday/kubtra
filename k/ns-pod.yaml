@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ns
+  labels:
+    app: ns
+spec:
+  containers:
+    - name: n1
+      image: gcr.io/qwiklabs-gcp-7ec6752e199d5766/n1
+      ports:
+      - containerPort: 3000
+    - name: n2
+      image: gcr.io/qwiklabs-gcp-7ec6752e199d5766/n2
+      ports:
+      - containerPort: 3001

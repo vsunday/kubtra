@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+        name: ns-deployment
+spec:
+        selector:
+                matchLabels:
+                        app: ns
+        replicas: 2
+        template:
+                metadata: 
+                        labels:
+                                app: ns
+                spec:
+                        containers:
+                        - name: n1
+                          image: gcr.io/qwiklabs-gcp-7ec6752e199d5766/n1
+                          ports:
+                          - containerPort: 3000
+                        - name: n2
+                          image: gcr.io/qwiklabs-gcp-7ec6752e199d5766/n2
+                          ports:
+                          - containerPort: 3001
+
